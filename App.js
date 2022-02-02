@@ -51,3 +51,7 @@ const receipt3 = {
 // TODO: 2.Make a <Receipt /> component that renders the first receipt's 
 //* person
 //* order: main, protein, rice, sauce, drink, cost
+
+
+
+// TODO: 3.Use ReactDOM to render your App in the browser.
