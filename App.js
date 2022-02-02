@@ -46,8 +46,45 @@ const receipt3 = {
 }
 
 // TODO: 1.Create an <App /> component that renders an H1 with some text.
+class App extends React.Component {
+    state = {
+        receipt1,
+        receipt2,
+        receipt3
+    }
 
+    render() {
+        return(
+           <div>
+               <h1>Korilla React Receipts</h1>
+               {receipt1.paid ? <Receipt receipt={receipt1}/> : ''}
+               {receipt2.paid ? <Receipt receipt={receipt2}/> : ''}
+               {receipt3.paid ? <Receipt receipt={receipt3}/> : ''}
+           </div>
+        )
+    }
+}
 
 // TODO: 2.Make a <Receipt /> component that renders the first receipt's 
 //* person
 //* order: main, protein, rice, sauce, drink, cost
+
+class Receipt extends React.Component {
+    render() {
+        const { person, order } = this.props.receipt;
+        return(
+            <div>
+                <h2>Person: { person }</h2>
+                <h3>Main: { order.main }</h3>
+                <p>Protein: { order.protein }</p>
+                <p>Rice: { order.rice }</p>
+                <p>Sauce: { order.sauce }</p>
+                <p>Drink: { order.drink }</p>
+                <p>Cost: { order.cost }</p>
+            </div>
+        )
+    }
+}
+
+// TODO: Use ReactDOM to render your App in the browser.
+ReactDOM.render(<App />, document.getElementById('root'));
